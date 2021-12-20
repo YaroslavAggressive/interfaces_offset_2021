@@ -2,7 +2,7 @@ from typing import List
 
 import pytest
 
-from kvest_task import check_keys
+from src/kvest_task import check_keys
 
 
 class Case:
