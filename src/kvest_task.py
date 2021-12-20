@@ -37,14 +37,14 @@ def read_graph(nodes_num: int, edges_lst: List[List[int]]) -> DiGraph:
 def check_keys(keys_num: int, links: List[List[int]], links_for_check: List[List[int]]) -> List[bool]:
 
     """
-    Kvest problem solution method
+    Quest problem solution method
 
     Parameters:
     ----------
     keys_num: int
         Number of keys
     links: List[List[int]]
-        Links between keys in kvest
+        Links between keys in quest
     links_for_check: List[List[int]]
         Connections whose existence needs to be verified
 
@@ -60,6 +60,7 @@ def check_keys(keys_num: int, links: List[List[int]], links_for_check: List[List
 
         if link[0] == link[1]:
             result.append(True)
+            continue
 
         visited = set()
         stack = [link[0]]
@@ -69,7 +70,7 @@ def check_keys(keys_num: int, links: List[List[int]], links_for_check: List[List
         while stack:
 
             curr_node = stack.pop(0)
-            if curr_node == link[1] and stack:
+            if curr_node == link[1]:
                 appended = True
                 result.append(True)
                 break
